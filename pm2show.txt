@@ -1,0 +1,61 @@
+[ec2-user@ip-172-31-40-2 ~]$ pm2 show myapp
+ Describing process with id 0 - name myapp 
+┌───────────────────┬──────────────────────────────────────────┐
+│ status            │ online                                   │
+│ name              │ myapp                                    │
+│ namespace         │ default                                  │
+│ version           │ 1.0.0                                    │
+│ restarts          │ 0                                        │
+│ uptime            │ 34m                                      │
+│ script path       │ /home/ec2-user/app/app.js                │
+│ script args       │ N/A                                      │
+│ error log path    │ /home/ec2-user/.pm2/logs/myapp-error.log │
+│ out log path      │ /home/ec2-user/.pm2/logs/myapp-out.log   │
+│ pid path          │ /home/ec2-user/.pm2/pids/myapp-0.pid     │
+│ interpreter       │ node                                     │
+│ interpreter args  │ N/A                                      │
+│ script id         │ 0                                        │
+│ exec cwd          │ /home/ec2-user/app                       │
+│ exec mode         │ fork_mode                                │
+│ node.js version   │ 18.20.8                                  │
+│ node env          │ N/A                                      │
+│ watch & reload    │ ✘                                        │
+│ unstable restarts │ 0                                        │
+│ created at        │ 2026-05-01T07:16:26.368Z                 │
+└───────────────────┴──────────────────────────────────────────┘
+ Actions available 
+┌────────────────────────┐
+│ km:heapdump            │
+│ km:cpu:profiling:start │
+│ km:cpu:profiling:stop  │
+│ km:heap:sampling:start │
+│ km:heap:sampling:stop  │
+└────────────────────────┘
+ Trigger via: pm2 trigger myapp <action_name>
+
+ Code metrics value 
+┌────────────────────────┬───────────┐
+│ Used Heap Size         │ 9.44 MiB  │
+│ Heap Usage             │ 84.06 %   │
+│ Heap Size              │ 11.23 MiB │
+│ Event Loop Latency p95 │ 1.06 ms   │
+│ Event Loop Latency     │ 0.42 ms   │
+│ Active handles         │ 4         │
+│ Active requests        │ 0         │
+│ HTTP                   │ 0 req/min │
+│ HTTP P95 Latency       │ 9 ms      │
+│ HTTP Mean Latency      │ 1 ms      │
+└────────────────────────┴───────────┘
+ Divergent env variables from local env 
+┌────────────────┬─────────────────────────────────┐
+│ PWD            │ /home/ec2-user/app              │
+│ SSH_CONNECTION │ 91.11.68.2 52455 172.31.40.2 22 │
+│ XDG_SESSION_ID │ 1                               │
+│ SSH_CLIENT     │ 91.11.68.2 52455 22             │
+│ SSH_TTY        │ /dev/pts/0                      │
+└────────────────┴─────────────────────────────────┘
+
+ Add your own code metrics: http://bit.ly/code-metrics
+ Use `pm2 logs myapp [--lines 1000]` to display logs
+ Use `pm2 env 0` to display environment variables
+ Use `pm2 monit` to monitor CPU and Memory usage myapp
